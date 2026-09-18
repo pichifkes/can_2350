@@ -5,6 +5,3 @@ MEMORY {
     SRAM8 : ORIGIN = 0x20080000, LENGTH = 4K
     SRAM9 : ORIGIN = 0x20081000, LENGTH = 4K
 }
-
-_stack_start = ORIGIN(CCRAM) + LENGTH(CCRAM);
-_stack_end = ORIGIN(CCRAM); /* Optional, add if used by the application */
