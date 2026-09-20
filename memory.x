@@ -5,3 +5,12 @@ MEMORY {
     SRAM8 : ORIGIN = 0x20080000, LENGTH = 4K
     SRAM9 : ORIGIN = 0x20081000, LENGTH = 4K
 }
+
+SECTIONS {
+    .start_block : ALIGN(4)
+    {
+        KEEP(*(.start_block));
+    } > FLASH
+} INSERT AFTER .vector_table;
+
+_stext = ADDR(.start_block) + SIZEOF(.start_block);
